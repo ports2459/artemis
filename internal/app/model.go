@@ -136,6 +136,9 @@ func (m Model) handleGlobalKey(msg tea.KeyMsg) tea.Cmd {
 	case key.Matches(msg, globalKeys.Panel4):
 		m.activePanel = panel.PanelBuild
 		return func() tea.Msg { return SwitchPanelMsg{Panel: panel.PanelBuild} }
+	case key.Matches(msg, globalKeys.Panel5):
+		m.activePanel = panel.PanelDecompiler
+		return func() tea.Msg { return SwitchPanelMsg{Panel: panel.PanelDecompiler} }
 	}
 	return nil
 }
@@ -209,6 +212,7 @@ func (m Model) viewTabs() string {
 		{panel.PanelEditor, "Editor", "2"},
 		{panel.PanelAssets, "Assets", "3"},
 		{panel.PanelBuild, "Build", "4"},
+		{panel.PanelDecompiler, "Decompiler", "5"},
 	}
 
 	var parts []string

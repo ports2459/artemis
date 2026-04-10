@@ -8,6 +8,7 @@ type keyMap struct {
 	Panel2     key.Binding
 	Panel3     key.Binding
 	Panel4     key.Binding
+	Panel5     key.Binding
 	CmdPalette key.Binding
 	Save       key.Binding
 	CloseTab   key.Binding
@@ -33,6 +34,10 @@ var globalKeys = keyMap{
 	Panel4: key.NewBinding(
 		key.WithKeys("alt+4"),
 		key.WithHelp("alt+4", "build"),
+	),
+	Panel5: key.NewBinding(
+		key.WithKeys("alt+5"),
+		key.WithHelp("alt+5", "decompiler"),
 	),
 	CmdPalette: key.NewBinding(
 		key.WithKeys("ctrl+p"),

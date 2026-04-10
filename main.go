@@ -11,6 +11,7 @@ import (
 	"github.com/eden/artemis/internal/lua"
 	assetspanel "github.com/eden/artemis/internal/panel/assets"
 	buildpanel "github.com/eden/artemis/internal/panel/build"
+	decompilerpanel "github.com/eden/artemis/internal/panel/decompiler"
 	editorpanel "github.com/eden/artemis/internal/panel/editor"
 	"github.com/eden/artemis/internal/panel/project"
 	"github.com/eden/artemis/internal/terminal"
@@ -49,8 +50,9 @@ func main() {
 	editorPanel := editorpanel.NewModel(globalCfg.Editor.TabSize)
 	assetsPanel := assetspanel.NewModel(caps)
 	buildPanel := buildpanel.NewModel()
+	decompilerPanel := decompilerpanel.NewModel()
 
-	m := app.NewModel(globalCfg, caps, &projectPanel, &editorPanel, &assetsPanel, &buildPanel)
+	m := app.NewModel(globalCfg, caps, &projectPanel, &editorPanel, &assetsPanel, &buildPanel, &decompilerPanel)
 
 	p := tea.NewProgram(m, tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {

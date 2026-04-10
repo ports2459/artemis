@@ -1,0 +1,14 @@
+[project]
+  name = "IdleTesting"
+  version = "1.0.0"
+
+[framework]
+  type = "bepinex"
+  version = "5.4.22"
+
+[game]
+  path = "~/Downloads/chaos"
+  deploy_dir = "BepInEx/plugins"
+
+[build]
+  configuration = "Debug"

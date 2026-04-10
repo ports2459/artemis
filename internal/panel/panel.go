@@ -10,6 +10,7 @@ const (
 	PanelEditor
 	PanelAssets
 	PanelBuild
+	PanelDecompiler
 )
 
 func (p PanelID) String() string {
@@ -22,6 +23,8 @@ func (p PanelID) String() string {
 		return "Assets"
 	case PanelBuild:
 		return "Build"
+	case PanelDecompiler:
+		return "Decompiler"
 	default:
 		return "Unknown"
 	}
